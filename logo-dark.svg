@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" width="320" height="72" role="img" aria-label="NKwork">
+  <defs>
+    <style>
+      @font-face {
+        font-family: 'Space Grotesk';
+        src: url('./fonts/space-grotesk-latin.woff2') format('woff2');
+        font-weight: 500 700;
+        font-display: block;
+      }
+      .logo {
+        font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+        font-weight: 700;
+        font-size: 56px;
+        letter-spacing: -0.03em;
+      }
+    </style>
+  </defs>
+  <!-- dark background -->
+  <rect width="320" height="72" fill="#09090b" rx="12"/>
+  <text x="14" y="54" class="logo">
+    <tspan fill="#f4f4f5">NK</tspan><tspan fill="#a855f7">work</tspan>
+  </text>
+</svg>

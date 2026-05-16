@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NKwork – Webdesign für lokale Unternehmen</title>
+  <meta name="description" content="NKwork gestaltet professionelle Websites für lokale Unternehmen. Einfach, klar und ohne Risiko – du siehst das Ergebnis, bevor du bezahlst.">
+  <link rel="canonical" href="https://nkwork.de">
+  <meta property="og:title" content="NKwork – Du siehst deine Website, bevor du sie bezahlst.">
+  <meta property="og:description" content="Webdesign für kleine Unternehmen. Keine Shops, kein Login-Kram – nur saubere, wirkungsvolle Websites.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nkwork.de">
+  <meta property="og:image" content="https://nkwork.de/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NKwork – Du siehst deine Website, bevor du sie bezahlst.">
+  <meta name="twitter:description" content="Webdesign für kleine Unternehmen. Keine Shops, kein Login-Kram – nur saubere, wirkungsvolle Websites.">
+  <meta name="twitter:image" content="https://nkwork.de/og-image.png">
+  <meta name="theme-color" content="#09090b">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%237c3aed'/><text x='50' y='66' font-family='serif' font-size='44' font-weight='900' fill='white' text-anchor='middle'>NK</text></svg>">
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: swap;
+      src: url('./fonts/inter-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: swap;
+      src: url('./fonts/inter-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Space Grotesk';
+      font-style: normal;
+      font-weight: 500 700;
+      font-display: swap;
+      src: url('./fonts/space-grotesk-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Space Grotesk';
+      font-style: normal;
+      font-weight: 500 700;
+      font-display: swap;
+      src: url('./fonts/space-grotesk-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+  </style>
+
+  <style>
+    :root {
+      --bg:        #09090b;
+      --bg2:       #111116;
+      --text:      #f4f4f5;
+      --muted:     #71717a;
+      --border:    rgba(255,255,255,0.07);
+      --card:      rgba(255,255,255,0.04);
+      --accent:    #7c3aed;
+      --accent2:   #a855f7;
+      --glow:      rgba(124,58,237,0.35);
+      --serif:     'Space Grotesk', system-ui, sans-serif;
+      --sans:      'Inter', system-ui, sans-serif;
+      --max:       1100px;
+      --r:         16px;
+      --r-lg:      28px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: var(--bg); scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* LAYOUT */
+    .container {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    @media(min-width:640px)  { .container { padding: 0 36px; } }
+    @media(min-width:1024px) { .container { padding: 0 48px; } }
+
+    section { padding: 80px 0; }
+    @media(min-width:1024px) { section { padding: 120px 0; } }
+
+    .label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 20px;
+    }
+
+    /* TYPE */
+    .h-xl {
+      font-family: var(--serif);
+      font-weight: 900;
+      font-size: clamp(52px, 9vw, 96px);
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+    }
+    .h-lg {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 100px;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      white-space: nowrap;
+      min-height: 44px;
+      transition: all 280ms ease;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 32px var(--glow);
+    }
+    .btn-primary:hover {
+      background: var(--accent2);
+      transform: translateY(-2px);
+      box-shadow: 0 0 48px rgba(124,58,237,0.5);
+    }
+    .btn-ghost {
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
+
+    /* BLOBS */
+    .blob-wrap {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.18;
+    }
+    .blob-1 {
+      width: 600px; height: 600px;
+      background: var(--accent);
+      top: -15%; left: -15%;
+      animation: float1 12s ease-in-out infinite;
+    }
+    .blob-2 {
+      width: 500px; height: 500px;
+      background: #c026d3;
+      top: 30%; right: -15%;
+      animation: float2 15s ease-in-out infinite;
+    }
+    .blob-3 {
+      width: 400px; height: 400px;
+      background: var(--accent);
+      bottom: -10%; left: 25%;
+      animation: float1 18s ease-in-out infinite reverse;
+    }
+    @keyframes float1 {
+      0%,100% { transform: translate(0,0); }
+      33%      { transform: translate(30px,-30px); }
+      66%      { transform: translate(-20px,20px); }
+    }
+    @keyframes float2 {
+      0%,100% { transform: translate(0,0); }
+      50%      { transform: translate(-40px,40px); }
+    }
+
+    /* NAV */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      transition: all 300ms ease;
+    }
+    .nav.scrolled {
+      background: rgba(9,9,11,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav__logo {
+      font-family: var(--serif);
+      font-weight: 900;
+      font-size: 20px;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav__logo span { color: var(--accent2); }
+
+    .nav__links {
+      display: none;
+      list-style: none;
+      align-items: center;
+      gap: 36px;
+    }
+    @media(min-width:1024px) { .nav__links { display: flex; } }
+    .nav__links a {
+      font-size: 14px; font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 200ms;
+      position: relative;
+    }
+    .nav__links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 1.5px;
+      background: var(--accent2);
+      transition: width 250ms ease;
+    }
+    .nav__links a:hover { color: var(--text); }
+    .nav__links a:hover::after { width: 100%; }
+
+    .nav__cta { display: none; }
+    @media(min-width:640px) { .nav__cta { display: inline-flex; } }
+
+    .hamburger {
+      display: flex; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none;
+      padding: 8px; border-radius: 8px;
+      min-width: 44px; min-height: 44px;
+      align-items: center; justify-content: center;
+      transition: background 200ms;
+    }
+    .hamburger:hover { background: var(--card); }
+    .hamburger span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--text);
+      transition: all 280ms ease;
+      transform-origin: center;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    @media(min-width:1024px) { .hamburger { display: none; } }
+
+    .m-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 98; opacity: 0;
+      pointer-events: none;
+      transition: opacity 280ms;
+    }
+    .m-overlay.open { opacity: 1; pointer-events: auto; }
+
+    .m-menu {
+      position: fixed;
+      top: 0; right: 0; bottom: 0;
+      width: min(280px,100vw);
+      background: #111116;
+      z-index: 99;
+      padding: 90px 28px 28px;
+      display: flex; flex-direction: column; gap: 4px;
+      transform: translateX(100%);
+      transition: transform 380ms cubic-bezier(0.16,1,0.3,1);
+      border-left: 1px solid var(--border);
+    }
+    .m-menu.open { transform: translateX(0); }
+    .m-menu a {
+      font-family: var(--serif);
+      font-size: 24px; font-weight: 700;
+      color: var(--text); text-decoration: none;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 200ms;
+    }
+    .m-menu a:hover { color: var(--accent2); }
+
+    /* HERO */
+    .hero {
+      position: relative; z-index: 1;
+      min-height: 100svh;
+      display: flex; align-items: center;
+      padding-top: 100px; padding-bottom: 80px;
+    }
+    .hero__badge {
+      display: inline-flex;
+      align-items: center; gap: 8px;
+      padding: 8px 16px;
+      border-radius: 100px;
+      border: 1px solid rgba(124,58,237,0.3);
+      background: rgba(124,58,237,0.08);
+      font-size: 13px; font-weight: 500;
+      color: var(--accent2);
+      margin-bottom: 36px;
+    }
+    .hero__dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent2);
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
+
+    .hero__h {
+      font-family: var(--serif);
+      font-weight: 900;
+      font-size: clamp(52px,9vw,96px);
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      margin-bottom: 28px;
+    }
+    .hero__h em {
+      font-style: normal;
+      background: linear-gradient(135deg, #a78bfa, #f0abfc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero__sub {
+      font-size: clamp(16px,2vw,20px);
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 50ch;
+      margin-bottom: 44px;
+    }
+    .hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 64px; }
+    .hero__scroll {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 12px; color: var(--muted);
+    }
+    .hero__line { width: 40px; height: 1px; background: var(--border); }
+
+    /* Rings */
+    .rings {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    .ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(124,58,237,0.08);
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      animation: pulse-ring 4s ease-in-out infinite;
+    }
+    .ring:nth-child(1) { width: 400px; height: 400px; animation-delay: 0s; }
+    .ring:nth-child(2) { width: 650px; height: 650px; animation-delay: 0.8s; }
+    .ring:nth-child(3) { width: 900px; height: 900px; animation-delay: 1.6s; }
+    @keyframes pulse-ring { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+    /* PROBLEM */
+    .problem { position: relative; z-index: 1; }
+    .problem__grid { display: grid; gap: 16px; }
+    @media(min-width:640px) { .problem__grid { grid-template-columns: repeat(3,1fr); } }
+    .problem__card {
+      padding: 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      transition: border-color 280ms, transform 280ms;
+    }
+    .problem__card:hover {
+      border-color: rgba(124,58,237,0.3);
+      transform: translateY(-4px);
+    }
+    .problem__card h3 {
+      font-family: var(--serif);
+      font-size: 18px; font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .problem__card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+    /* LÖSUNG */
+    .loesung { position: relative; z-index: 1; }
+    .loesung__inner {
+      display: grid; gap: 60px; align-items: start;
+    }
+    @media(min-width:1024px) { .loesung__inner { grid-template-columns: 1fr 1fr; } }
+
+    .usp-box {
+      padding: 44px;
+      border-radius: var(--r-lg);
+      background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(192,38,211,0.15));
+      border: 1px solid rgba(124,58,237,0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .usp-box::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,58,237,0.3), transparent 70%);
+    }
+    .usp-box__quote {
+      font-family: var(--serif);
+      font-size: clamp(20px,3vw,32px);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .usp-box p { font-size: 15px; color: rgba(244,244,245,0.65); line-height: 1.65; position: relative; }
+
+    .steps { display: flex; flex-direction: column; gap: 28px; }
+    .step { display: flex; gap: 16px; }
+    .step__num {
+      width: 32px; height: 32px; flex-shrink: 0;
+      border-radius: 50%;
+      border: 1.5px solid rgba(124,58,237,0.4);
+      background: rgba(124,58,237,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700;
+      color: var(--accent2);
+      margin-top: 3px;
+    }
+    .step h4 {
+      font-family: var(--serif);
+      font-size: 18px; font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .step p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+    /* LEISTUNGEN */
+    .leistungen { position: relative; z-index: 1; }
+    .leistungen__note {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 20px 24px;
+      background: rgba(124,58,237,0.08);
+      border: 1px solid rgba(124,58,237,0.2);
+      border-radius: var(--r);
+      margin-bottom: 48px;
+      font-size: 14px;
+      color: rgba(244,244,245,0.7);
+      line-height: 1.6;
+    }
+    .leistungen__grid { display: grid; gap: 16px; }
+    @media(min-width:640px) { .leistungen__grid { grid-template-columns: repeat(3,1fr); } }
+    .leistung {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      display: flex; flex-direction: column; gap: 20px;
+      transition: border-color 280ms, transform 280ms;
+    }
+    .leistung:hover {
+      border-color: rgba(124,58,237,0.35);
+      transform: translateY(-4px);
+    }
+    .leistung h3 { font-family: var(--serif); font-size: 20px; font-weight: 700; }
+    .leistung p { font-size: 14px; color: var(--muted); line-height: 1.65; flex: 1; }
+    .leistung__price {
+      font-family: var(--serif);
+      font-size: 28px; font-weight: 900;
+      background: linear-gradient(135deg, #a78bfa, #f0abfc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+    .leistung__price small {
+      font-family: var(--sans);
+      font-size: 13px; font-weight: 400;
+      color: var(--muted);
+      -webkit-text-fill-color: var(--muted);
+    }
+
+    /* ABLAUF */
+    .ablauf { position: relative; z-index: 1; }
+    .ablauf__grid { display: grid; gap: 32px; }
+    @media(min-width:640px) { .ablauf__grid { grid-template-columns: repeat(4,1fr); } }
+    .ablauf__step {}
+    .ablauf__num {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      border: 1.5px solid var(--accent);
+      background: rgba(124,58,237,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif);
+      font-size: 20px; font-weight: 900;
+      color: var(--accent2);
+      margin-bottom: 20px;
+    }
+    .ablauf__step h3 {
+      font-family: var(--serif);
+      font-size: 18px; font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .ablauf__step p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+    /* ÜBER MICH */
+    .about { position: relative; z-index: 1; }
+    .about__inner {
+      display: grid; gap: 60px; align-items: start;
+    }
+    @media(min-width:1024px) { .about__inner { grid-template-columns: 5fr 7fr; } }
+    .about__brand {
+      font-family: var(--serif);
+      font-weight: 900;
+      font-size: clamp(44px, 6vw, 72px);
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      margin-top: 12px;
+      background: linear-gradient(135deg, #a78bfa, #f0abfc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about__text {
+      font-size: clamp(16px,1.5vw,18px);
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    /* FAQ */
+    .faq { position: relative; z-index: 1; }
+    .faq__list {
+      max-width: 760px;
+      border-top: 1px solid var(--border);
+    }
+    .faq__item { border-bottom: 1px solid var(--border); }
+    .faq__q {
+      width: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px;
+      padding: 22px 0;
+      background: none; border: none;
+      cursor: pointer; text-align: left;
+      font-family: var(--serif);
+      font-size: clamp(15px,2vw,19px);
+      font-weight: 700;
+      color: var(--text);
+      min-height: 44px;
+      transition: color 200ms;
+    }
+    .faq__q:hover { color: var(--accent2); }
+    .faq__icon {
+      width: 28px; height: 28px; flex-shrink: 0;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; color: var(--muted);
+      transition: all 280ms;
+    }
+    .faq__item.open .faq__icon {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      transform: rotate(45deg);
+    }
+    .faq__body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 340ms ease;
+    }
+    .faq__body.open { grid-template-rows: 1fr; }
+    .faq__body-inner { overflow: hidden; }
+    .faq__body p {
+      font-size: 15px; color: var(--muted);
+      line-height: 1.7; padding-bottom: 22px;
+      max-width: 65ch;
+    }
+
+    /* KONTAKT */
+    .kontakt { position: relative; z-index: 1; }
+    .kontakt__box {
+      border-radius: 40px;
+      padding: 64px 40px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(124,58,237,0.2) 0%, rgba(192,38,211,0.12) 100%);
+      border: 1px solid rgba(124,58,237,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .kontakt__box::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: 50%;
+      transform: translateX(-50%);
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,58,237,0.2), transparent 70%);
+      pointer-events: none;
+    }
+    .kontakt__inner { position: relative; max-width: 620px; margin: 0 auto; }
+    .kontakt h2 { color: var(--text); margin: 16px 0 24px; }
+    .kontakt__sub {
+      font-size: clamp(15px,2vw,18px);
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 40px;
+    }
+    .kontakt__email {
+      display: block;
+      font-size: 16px;
+      color: var(--accent2);
+      margin-top: 24px;
+      text-decoration: none;
+      transition: color 200ms;
+    }
+    .kontakt__email:hover { color: #f0abfc; }
+
+    /* FOOTER */
+    .footer { position: relative; z-index: 1; padding: 40px 0; border-top: 1px solid var(--border); }
+    .footer__top {
+      display: flex; flex-wrap: wrap;
+      align-items: flex-start; justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .footer__logo {
+      font-family: var(--serif);
+      font-weight: 900; font-size: 18px;
+      color: var(--text); text-decoration: none;
+      letter-spacing: -0.02em;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .footer__logo span { color: var(--accent2); }
+    .footer__tagline {
+      font-size: 12px; color: var(--muted);
+    }
+    .footer__bottom {
+      display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: space-between;
+      gap: 12px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .footer__links {
+      display: flex; flex-wrap: wrap; gap: 20px; list-style: none;
+    }
+    .footer__links a {
+      font-size: 12px; color: var(--muted);
+      text-decoration: none; transition: color 200ms;
+    }
+    .footer__links a:hover { color: var(--text); }
+    .footer__copy { font-size: 12px; color: var(--muted); }
+    .footer__image-note {
+      font-size: 11px; color: var(--muted);
+      margin-top: 8px;
+      opacity: 0.6;
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 100ms; }
+    .d2 { transition-delay: 200ms; }
+    .d3 { transition-delay: 300ms; }
+    .d4 { transition-delay: 400ms; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "NKwork",
+    "description": "Webdesign für lokale Unternehmen. Präsenz-Websites, Landing Pages und Redesigns – du siehst das Ergebnis, bevor du bezahlst.",
+    "url": "https://nkwork.de",
+    "email": "Nicklas@NKwork.de",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Deutschland"
+    },
+    "availableLanguage": "German",
+    "priceRange": "ab 299 €",
+    "serviceType": ["Webdesign", "Landing Page", "Website Redesign"],
+    "knowsAbout": ["Webdesign", "HTML", "CSS", "Responsive Design", "DSGVO-konforme Websites"]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- Animated background blobs -->
+  <div class="blob-wrap" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- NAV -->
+  <header>
+    <nav class="nav" id="nav">
+      <div class="container">
+        <div class="nav__inner">
+          <a href="#" class="nav__logo">NK<span>work</span></a>
+          <ul class="nav__links" role="list">
+            <li><a href="#loesung">Mein Ansatz</a></li>
+            <li><a href="#leistungen">Leistungen</a></li>
+            <li><a href="#ablauf">Ablauf</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+          <a href="mailto:Nicklas@NKwork.de?subject=Website%20anfragen" class="btn btn-primary nav__cta">Anfragen</a>
+          <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="m-overlay" id="overlay"></div>
+    <nav class="m-menu" id="mmenu" aria-hidden="true">
+      <a href="#loesung">Mein Ansatz</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#about">Über NKwork</a>
+      <a href="#faq">FAQ</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="rings" aria-hidden="true">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+      </div>
+      <div class="container">
+        <div class="hero__badge reveal">
+          <span class="hero__dot"></span>
+          Verfügbar für neue Projekte
+        </div>
+
+        <h1 class="hero__h reveal d1">
+          Du siehst deine<br>
+          Website, <em>bevor</em><br>
+          du sie bezahlst.
+        </h1>
+
+        <p class="hero__sub reveal d2">
+          NKwork gestaltet professionelle Websites für lokale Unternehmen –
+          ohne Risiko, ohne versteckte Kosten, ohne Überraschungen.
+        </p>
+
+        <div class="hero__ctas reveal d3">
+          <a
+            href="mailto:Nicklas@NKwork.de?subject=Website%20anfragen&body=Hallo%20NKwork%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20eine%20Website.%0A%0AMein%20Unternehmen%3A%20%5BName%5D%0AWas%20ich%20mache%3A%20%5BBeschreibung%5D%0AWas%20ich%20brauche%3A%20%5Bz.B.%20Landing%20Page%5D%0A%0AFreue%20mich%20auf%20deine%20R%C3%BCckmeldung!"
+            class="btn btn-primary"
+          >Kostenlose Demo anfragen →</a>
+          <a href="#leistungen" class="btn btn-ghost">Leistungen ansehen</a>
+        </div>
+
+        <div class="hero__scroll reveal d4">
+          <span class="hero__line"></span>
+          Mehr erfahren
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section id="problem">
+      <div class="container">
+        <span class="label reveal">Das Problem</span>
+        <h2 class="h-lg reveal d1" style="margin-bottom:48px;">
+          Keine Website.<br>Oder eine,<br>die schadet.
+        </h2>
+        <div class="problem__grid">
+          <div class="problem__card reveal d1">
+            <h3>Unsichtbar im Netz</h3>
+            <p>Wer dich googelt und nichts findet, geht zur Konkurrenz. Eine fehlende Website kostet jeden Tag Kunden.</p>
+          </div>
+          <div class="problem__card reveal d2">
+            <h3>Auf dem Handy kaputt</h3>
+            <p>Über 70 % der Suchen laufen über das Smartphone. Eine Seite die dort nicht funktioniert, schreckt ab.</p>
+          </div>
+          <div class="problem__card reveal d3">
+            <h3>Teuer und enttäuschend</h3>
+            <p>Viele wurden schon enttäuscht: hohe Kosten, lange Wartezeiten, und eine Seite die nicht passt.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LÖSUNG -->
+    <section id="loesung">
+      <div class="container">
+        <div class="loesung__inner">
+          <div>
+            <span class="label reveal">Mein Ansatz</span>
+            <h2 class="h-lg reveal d1" style="margin-bottom:48px;">
+              Anders als<br>die anderen.
+            </h2>
+            <div class="steps">
+              <div class="step reveal d1">
+                <div class="step__num">1</div>
+                <div>
+                  <h4>Schreib mir einfach</h4>
+                  <p>Kein Anruf nötig, kein Formular. Schick mir eine kurze E-Mail mit den Details zu deinem Unternehmen.</p>
+                </div>
+              </div>
+              <div class="step reveal d2">
+                <div class="step__num">2</div>
+                <div>
+                  <h4>Ich baue deine Demo</h4>
+                  <p>Kostenlos, auf eigenes Risiko. Du bekommst eine echte, fertige Website zu sehen – kein Mockup, kein Versprechen.</p>
+                </div>
+              </div>
+              <div class="step reveal d3">
+                <div class="step__num">3</div>
+                <div>
+                  <h4>Du entscheidest</h4>
+                  <p>Gefällt sie dir? Dann starten wir. Gefällt sie nicht? Du schuldest mir gar nichts.</p>
+                </div>
+              </div>
+              <div class="step reveal d4">
+                <div class="step__num">4</div>
+                <div>
+                  <h4>Deine Website geht live</h4>
+                  <p>Letzte Anpassungen, Hosting, Domain – alles geklärt. Du konzentrierst dich auf dein Geschäft.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="usp-box reveal d2">
+            <p class="usp-box__quote">
+              „Du siehst deine Website, bevor du sie bezahlst."
+            </p>
+            <p>NKwork trägt das Risiko. Du bekommst das Ergebnis – oder du gehst ohne Kosten weiter. Kein Druck, keine Verpflichtung.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEISTUNGEN -->
+    <section class="leistungen" id="leistungen">
+      <div class="container">
+        <span class="label reveal">Leistungen</span>
+        <h2 class="h-lg reveal d1" style="margin-bottom:32px;">Was ich baue.</h2>
+
+        <div class="leistungen__note reveal d2">
+          <span>Ich spezialisiere mich auf das, was ich mit Überzeugung zeigen kann: Präsenz-Websites, Landing Pages und Redesigns. Keine Online-Shops, keine Login-Systeme – dafür saubere, wirkungsvolle Ergebnisse.</span>
+        </div>
+
+        <div class="leistungen__grid">
+          <div class="leistung reveal d1">
+            <h3>Landing Page</h3>
+            <p>Eine starke Seite, die auf den Punkt kommt. Perfekt für Cafés, Friseure, Handwerker und alle, die online gefunden werden wollen.</p>
+            <div class="leistung__price">ab 299 € <small>einmalig</small></div>
+          </div>
+          <div class="leistung reveal d2">
+            <h3>Mehrseitige Website</h3>
+            <p>Startseite, Über uns, Leistungen, Kontakt – alles verknüpft, auf jedem Gerät top, für Unternehmen die mehr zeigen wollen.</p>
+            <div class="leistung__price">ab 599 € <small>einmalig</small></div>
+          </div>
+          <div class="leistung reveal d3">
+            <h3>Redesign</h3>
+            <p>Deine Website wirkt veraltet? Ich überarbeite sie komplett – neues Design, bessere Wirkung, ohne bei Null anzufangen.</p>
+            <div class="leistung__price">ab 399 € <small>einmalig</small></div>
+          </div>
+        </div>
+        <p style="font-size:13px;color:var(--muted);margin-top:20px;" class="reveal">Preise sind Richtwerte. Das genaue Angebot klären wir per E-Mail.</p>
+      </div>
+    </section>
+
+    <!-- ABLAUF -->
+    <section class="ablauf" id="ablauf">
+      <div class="container">
+        <span class="label reveal">So läuft es ab</span>
+        <h2 class="h-lg reveal d1" style="margin-bottom:48px;">Von der E-Mail<br>zur fertigen Website.</h2>
+        <div class="ablauf__grid">
+          <div class="ablauf__step reveal d1">
+            <div class="ablauf__num">1</div>
+            <h3>E-Mail schreiben</h3>
+            <p>Beschreib kurz dein Unternehmen und was du dir vorstellst. Kein Formular, kein Anruf.</p>
+          </div>
+          <div class="ablauf__step reveal d2">
+            <div class="ablauf__num">2</div>
+            <h3>Demo wird gebaut</h3>
+            <p>Ich setze mich hin und baue – in der Regel innerhalb weniger Tage. Kostenlos und auf mein Risiko.</p>
+          </div>
+          <div class="ablauf__step reveal d3">
+            <div class="ablauf__num">3</div>
+            <h3>Du entscheidest</h3>
+            <p>Du siehst das Ergebnis. Ja? Wir starten. Nein? Du schuldest mir gar nichts.</p>
+          </div>
+          <div class="ablauf__step reveal d4">
+            <div class="ablauf__num">4</div>
+            <h3>Launch</h3>
+            <p>Domain, Hosting, letzte Anpassungen – deine Website ist live. Erledigt.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÜBER MICH -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about__inner">
+          <div class="reveal">
+            <span class="label">Über NKwork</span>
+            <div class="about__brand">NK<br>work.</div>
+          </div>
+          <div>
+            <p class="about__text reveal d1">
+              NKwork ist 2026 als aufstrebendes Ein-Personen-Studio entstanden – mit dem Antrieb, Webdesign für lokale Unternehmen zugänglicher zu machen. Keine Agentur, kein Overhead. Direkt, persönlich, ehrlich.
+            </p>
+            <p class="about__text reveal d2">
+              Als aufstrebender Web Designer konzentriere ich mich auf das, was ich mit Überzeugung abliefern kann: saubere Präsenz-Websites, die wirken. Keine Shops, keine Login-Systeme – dafür solide Ergebnisse, hinter denen ich stehe.
+            </p>
+            <p class="about__text reveal d3">
+              Der Demo-Ansatz ist kein Trick. Er ist mein Versprechen: Du zahlst erst, wenn das Ergebnis überzeugt.
+            </p>
+            <div style="margin-top:32px;" class="reveal d4">
+              <a href="mailto:Nicklas@NKwork.de?subject=Hallo%20NKwork" class="btn btn-primary">Kontakt aufnehmen →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <span class="label reveal">FAQ</span>
+        <h2 class="h-lg reveal d1" style="margin-bottom:48px;">Häufige<br>Fragen.</h2>
+        <div class="faq__list" role="list">
+
+          <div class="faq__item reveal">
+            <button class="faq__q" aria-expanded="false" aria-controls="a1">
+              Was kostet eine Website?
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__body" id="a1"><div class="faq__body-inner">
+              <p>Landing Pages starten ab 299 €, mehrseitige Websites ab 599 €, Redesigns ab 399 €. Das sind Richtwerte. Den genauen Preis klären wir per E-Mail – transparent, ohne Überraschungen.</p>
+            </div></div>
+          </div>
+
+          <div class="faq__item reveal d1">
+            <button class="faq__q" aria-expanded="false" aria-controls="a2">
+              Wie lange dauert es?
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__body" id="a2"><div class="faq__body-inner">
+              <p>Die Demo ist in der Regel in 3–5 Werktagen fertig. Bis zum Live-Gang rechne mit insgesamt 1–2 Wochen, je nach Umfang und Feedback-Runden.</p>
+            </div></div>
+          </div>
+
+          <div class="faq__item reveal d2">
+            <button class="faq__q" aria-expanded="false" aria-controls="a3">
+              Was, wenn mir die Demo nicht gefällt?
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__body" id="a3"><div class="faq__body-inner">
+              <p>Dann ist das so. Du schuldest mir gar nichts – kein Geld, keine Erklärung. Das Risiko trage ich. Das ist kein Marketing, das ist ein echtes Versprechen.</p>
+            </div></div>
+          </div>
+
+          <div class="faq__item reveal d3">
+            <button class="faq__q" aria-expanded="false" aria-controls="a4">
+              Welche Websites baust du nicht?
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__body" id="a4"><div class="faq__body-inner">
+              <p>Keine Online-Shops, keine Seiten mit Login-Systemen oder Nutzerkonten, keine Web-Apps. Ich baue das, hinter dem ich mit Überzeugung stehen kann – und sage ehrlich, was außerhalb meines Bereichs liegt.</p>
+            </div></div>
+          </div>
+
+          <div class="faq__item reveal d4">
+            <button class="faq__q" aria-expanded="false" aria-controls="a5">
+              Kümmerst du dich um Hosting und Domain?
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__body" id="a5"><div class="faq__body-inner">
+              <p>Ja. Ich helfe dir bei der Domain-Registrierung und dem Hosting-Setup. Du musst dich um nichts Technisches kümmern.</p>
+            </div></div>
+          </div>
+
+          <div class="faq__item reveal">
+            <button class="faq__q" aria-expanded="false" aria-controls="a6">
+              Muss ich anrufen oder ein Formular ausfüllen?
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__body" id="a6"><div class="faq__body-inner">
+              <p>Nein. Eine kurze E-Mail reicht – beschreib einfach dein Unternehmen und was du brauchst. Ich melde mich innerhalb von 24 Stunden.</p>
+            </div></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section class="kontakt" id="kontakt">
+      <div class="container">
+        <div class="kontakt__box reveal">
+          <div class="kontakt__inner">
+            <span class="label">Jetzt starten</span>
+            <h2 class="h-lg">Bereit für deine<br>kostenlose Demo?</h2>
+            <p class="kontakt__sub">
+              Schreib mir eine kurze E-Mail mit den wichtigsten Infos zu deinem Unternehmen. Kein Anruf, kein Formular – ich melde mich innerhalb von 24 Stunden.
+            </p>
+            <a
+              href="mailto:Nicklas@NKwork.de?subject=Website%20anfragen&body=Hallo%20NKwork%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20eine%20Website.%0A%0AMein%20Unternehmen%3A%20%5BName%5D%0AWas%20ich%20mache%3A%20%5BBeschreibung%5D%0AWas%20ich%20mir%20vorstelle%3A%20%5Bz.B.%20Landing%20Page%5D%0A%0AFreue%20mich%20auf%20dich!"
+              class="btn btn-primary"
+            >E-Mail schreiben →</a>
+            <a href="mailto:Nicklas@NKwork.de" class="kontakt__email">Nicklas@NKwork.de</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+
+        <div>
+          <a href="#" class="footer__logo">NK<span>work</span></a>
+          <p class="footer__tagline">Webdesign für lokale Unternehmen · 2026</p>
+          <p class="footer__image-note">Bilder auf Kundenseiten werden ausschließlich mit entsprechender Lizenz oder Freigabe des Kunden verwendet.</p>
+        </div>
+
+
+      </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copy">© 2026 NKwork</span>
+        <ul class="footer__links" role="list">
+          <li><a href="mailto:Nicklas@NKwork.de">Nicklas@NKwork.de</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mmenu = document.getElementById('mmenu');
+    const overlay = document.getElementById('overlay');
+
+    function open()  {
+      hamburger.classList.add('open');
+      hamburger.setAttribute('aria-expanded','true');
+      mmenu.classList.add('open');
+      mmenu.setAttribute('aria-hidden','false');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded','false');
+      mmenu.classList.remove('open');
+      mmenu.setAttribute('aria-hidden','true');
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () => mmenu.classList.contains('open') ? close() : open());
+    overlay.addEventListener('click', close);
+    mmenu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq__q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq__item');
+        const body = btn.nextElementSibling;
+        const wasOpen = item.classList.contains('open');
+
+        document.querySelectorAll('.faq__item.open').forEach(el => {
+          el.classList.remove('open');
+          el.querySelector('.faq__q').setAttribute('aria-expanded','false');
+          el.querySelector('.faq__body').classList.remove('open');
+        });
+
+        if (!wasOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded','true');
+          body.classList.add('open');
+        }
+      });
+    });
+
+    // Scroll reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const href = a.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
